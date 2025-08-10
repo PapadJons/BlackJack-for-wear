@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.ferkusteam.blackjack.wear" version="1.3.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>BlackJack Wear</name>
+    <description>BlackJack for Wear OS</description>
+    <author email="ferkusteam@gmail.com" href="http://t.me/bkuzn">Ferkus Team</author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="Orientation" value="portrait" />
+    <preference name="Fullscreen" value="true" />
+    <preference name="AndroidLaunchMode" value="singleTop" />
+    <preference name="AndroidXEnabled" value="true" />
+    <preference name="GradlePluginGoogleServicesEnabled" value="true" />
+    <preference name="target-device" value="wearable" />
+    <preference name="android-minSdkVersion" value="28" />
+    <preference name="android-targetSdkVersion" value="33" />
+    <preference name="KeepRunning" value="true" />
+    
+    <platform name="android">
+        <allow-intent href="market:*" />
+        <icon src="res/icon/icon.png" />
+        <icon src="res/icon/icon-round.png" density="wear" />
+        <splash src="res/screen/android/splash.png" density="port-hdpi"/>
+        
+        <config-file parent="/manifest/application" target="AndroidManifest.xml">
+            <meta-data android:name="com.google.android.wearable.standalone" android:value="true" />
+            <uses-feature android:name="android.hardware.type.watch" />
+        </config-file>
+        
+        <resource-file src="res/values/wear.xml" target="app/src/main/res/values/wear.xml" />
+    </platform>
+</widget>
